@@ -1,5 +1,13 @@
 const clock = document.querySelector("h2#clock");
 
+function onLoginSubmit(event) {
+    clock.classList.remove("hidden");
+}
+
+function painGreetings(username) {
+    clock.classList.remove("hidden");
+}
+
 function getClock() {
     const date = new Date(); // 오늘의 date 가져오기
     // 숫자를 string으로 바꾸려면 String으로 감싸기 (대소문자 구분)

@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
 
 .hidden {
-    display: none;
+    display: none !important; 
+    /* 나중에 설정한 login-form의 display 설정이 적용되어 hidden이 적용이 안되는 상황 발생, !important로 이 속성이 변경되지 않도록 설정 */
 }
 
 /* body {
@@ -10,15 +11,56 @@
 
 body {
     font-family: 'Noto Sans', sans-serif;
-    color: gray;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* img {
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 100vw;
-    background-size: cover;
-} */
+    z-index: -1;
+}
+
+#welcome {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 5px;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#login-form input {
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    background-color: transparent;
+}
+
+#login-form input:focus {
+    outline: none;
+}
+
+#login-button {
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+}
+
