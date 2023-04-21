@@ -36,7 +36,8 @@ function paintToDo(newTodo) {
     const span = document.createElement("span"); // html에 span 생성
     span.innerText = newTodo.text; // span에 newTodo(input된 todo의 텍스트)를 텍스트로 출력
     const button = document.createElement("button");
-    button.innerText = "❌"; // 버튼에 이모지 출력
+    // button.innerText = "❌"; // 버튼에 이모지 출력
+    button.setAttribute("class", "fas fa-times"); // 버튼에 font awesome 아이콘 출력
     button.addEventListener("click", deleteToDo); // 버튼 클릭 시 해당 리스트 삭제
     li.appendChild(span); // span을 li의 자식으로 지정
     li.appendChild(button); // 버튼을 li의 자식으로 지정
