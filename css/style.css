@@ -37,6 +37,7 @@ img {
     text-align: center;
     font-size: 38px;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 #login-form {

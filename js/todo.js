@@ -42,6 +42,11 @@ function paintToDo(newTodo) {
     li.appendChild(span); // span을 li의 자식으로 지정
     li.appendChild(button); // 버튼을 li의 자식으로 지정
     toDoList.appendChild(li); // 리스트를 toDoList의 자식으로 지정
+
+    span.addEventListener('click', (e)=> {
+        span.style.textDecoration = span.style.textDecoration === 'line-through' ? '': 'line-through';
+        // if 조건문의 축약, textDecoration이 line-through면 삭제 아니면 삽입
+    })
 }
 
 function handleToDoSubmit(event) {
@@ -80,7 +85,7 @@ if(savedToDos !== null) {
     // parsedToDos.forEach((item) => consloe.log("this is", item)); 화살표 함수로 function을 짧게 쓰는 방법(위 4개의 주석이랑 똑같음)
 }
 
-const finish = document.querySelectorAll("#todo-list span");
+const finish = document.querySelectorAll("#todo-list li");
 finish.forEach((li) => { // querySelectorAll은 배열로 받아와서 forEach를 사용해야 함
     li.addEventListener('click', (e)=> {
         li.style.textDecoration = li.style.textDecoration === 'line-through' ? '': 'line-through';
