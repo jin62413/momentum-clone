@@ -45,7 +45,7 @@ function paintToDo(newTodo) {
 
     span.addEventListener('click', (e)=> {
         span.style.textDecoration = span.style.textDecoration === 'line-through' ? '': 'line-through';
-        // if 조건문의 축약, textDecoration이 line-through면 삭제 아니면 삽입
+        // span 추가하고 동작할 수 있게 한번 더 작성
     })
 }
 
