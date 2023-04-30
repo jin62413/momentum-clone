@@ -6,9 +6,13 @@
     /* 나중에 설정한 login-form의 display 설정이 적용되어 hidden이 적용이 안되는 상황 발생, !important로 이 속성이 변경되지 않도록 설정 */
 }
 
-/* body {
+body {
+    max-width: 100vw;
     max-height: 100vh;
-} */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Maven Pro', sans-serif;
@@ -17,6 +21,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 img {
@@ -67,7 +72,7 @@ img {
 
 #clock {
     font-size: 100px;
-    margin: 18% 0 0 0;
+    margin: 15% 0 0 0;
 }
 
 #greeting {
@@ -95,8 +100,22 @@ img {
 
 #todo-list {
     list-style: none;
-    font-size: 25px;
-    margin-top: 10px;
+    font-size: 20px;
+    margin: 10px 0 78px 0;
+    height: auto;
+    overflow-y: scroll;
+}
+
+#todo-list::-webkit-scrollbar {
+    display: none;
+}
+
+#todo-list li {
+    margin-bottom: 10px;
+}
+
+#todo-list span:hover {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:20px;'><text y='50%'>✍️</text></svg>") 5 15, auto;
 }
 
 #todo-list button {

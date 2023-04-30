@@ -52,8 +52,13 @@ function handleToDoSubmit(event) {
         text: newTodo, // 사용자가 작성한 텍스트
         id: Date.now(), // 밀리초(1000분의 1초)를 주는 함수
     };
-    toDos.push(newTodoObj); // 오브젝트(텍스트와 id)를 toDos array로 보내기
-    paintToDo(newTodoObj); // todo리스트 생성
+    if (toDos.length < 10) { // toDos배열의 길이가 10개보다 적으면
+        toDos.push(newTodoObj); // 오브젝트(텍스트와 id)를 toDos array로 보내기
+        paintToDo(newTodoObj); // todo리스트 생성
+    }
+    else {
+        return alert("오늘 할 일은 충분할 것 같아요!"); // toDos배열의 길이가 10개보다 많으면 알림 출력
+    }
     saveTodos();
 }
 
@@ -74,3 +79,11 @@ if(savedToDos !== null) {
     // }
     // parsedToDos.forEach((item) => consloe.log("this is", item)); 화살표 함수로 function을 짧게 쓰는 방법(위 4개의 주석이랑 똑같음)
 }
+
+const finish = document.querySelectorAll("#todo-list span");
+finish.forEach((li) => { // querySelectorAll은 배열로 받아와서 forEach를 사용해야 함
+    li.addEventListener('click', (e)=> {
+        li.style.textDecoration = li.style.textDecoration === 'line-through' ? '': 'line-through';
+        // if 조건문의 축약, textDecoration이 line-through면 삭제 아니면 삽입
+    })
+})
